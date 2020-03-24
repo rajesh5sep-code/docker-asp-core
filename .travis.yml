@@ -4,3 +4,12 @@ services:
     - docker
 before_install:
     - docker build -t rajesh5sep/docker-asp-core -f Dockerfile .
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: "docker-asp-core"
+    env: "DockerAspCore-env"
+    bucket_name: "elasticbeanstalk-us-east-2-612651000511"
+    bucket_path: "docker-asp-core"
+    on:
+        branch: master
