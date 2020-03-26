@@ -13,3 +13,6 @@ deploy:
     bucket_path: "docker-asp-core"
     on:
         branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_Access_key:
+        secure: "$AWS_SECRET_KEY"
